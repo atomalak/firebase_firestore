@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="alert alert-info text-center">Takımlar</div>
+        <div class="row">
+            <div class="col col-sm-4">
+                <form>
+                    <div class="form-group">
+                            <label>Takım Ismi</label>
+                            <input type="text" placeholder="takım ismini giriniz" id="name"  class="form-control"/>
+                    </div>
+                   
+                    <div class="form-group">
+                            <label>Takım Kuruluş Yılını Giriniz</label>
+                            <input type="text" placeholder="takım Kuruluş yılı" id="year"  class="form-control"/>
+                    </div>
+                    <a class="btn btn-primary" onclick="saveTeams()" id="save">
+                        Kaydet
+                    </a>
+
+                    <a class="btn btn-info" onclick="updateTeam(event)" id="update" style="display:none">
+                            Güncelle
+                        </a>
+                        
+
+                </form>
+            </div>
+            <div class="col col-sm-8">
+                <ul class="list-group" id="teamlist">
+
+                </ul>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAn5x3wQrWRqow1bsA7OQWcFF3a1gF8MBY",
+            authDomain: "yazilim-pla.firebaseapp.com",
+            databaseURL: "https://yazilim-pla.firebaseio.com",
+            projectId: "yazilim-pla",
+            storageBucket: "yazilim-pla.appspot.com",
+            messagingSenderId: "425107667292"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+    </script>
+    <script src="app.js"> </script>
+</body>
+
+</html>
